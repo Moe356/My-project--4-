@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moe : MonoBehaviour
+public class Moe : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("jjjjjj");
+        int randomNumber = Random.Range(1,21);
+        int counter = 0;
+        while(counter > 10)
+        {
+            Debug.Log(randomNumber);
+            counter++;
+            if(randomNumber == 5)continue;
+           else if (randomNumber == 15) break;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
