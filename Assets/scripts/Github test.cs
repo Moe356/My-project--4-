@@ -1,20 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Moe : MonoBehaviour
 {
     void Start()
     {
-        int randomNumber = Random.Range(1,21);
+         string funnySentence = "";
+
         int counter = 0;
-        while(counter > 10)
+        string[] words = {"Cat", "Dog", "Car", "Pizza", "Hat", "Fish", "Tree" ,"Monkey", "Ball", "Bird"};
+        while(counter < 7)
         {
-            Debug.Log(randomNumber);
+            int randomWord= Random.Range(0,words.Length);
+            
             counter++;
-            if(randomNumber == 5)continue;
-           else if (randomNumber == 15) break;
+            funnySentence += words[randomWord] + " ";
+
         }
+        Debug.Log(funnySentence);
     }
 
 }
