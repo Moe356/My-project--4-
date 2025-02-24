@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ChildClass : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace Lecture11{
+public class ChildClass : BaseClass
     {
-        
+        public override void printInfo()
+        {
+            // base.printInfo();
+            Debug.Log("I am the poor Sabi !!");
+        }
     }
+}
 
-    // Update is called once per frame
-    void Update()
+namespace Lecture11_5
+{
+    using Lecture11;
+
+    public class ChildClass
     {
-        
+        Lecture11.ChildClass cc = new Lecture11.ChildClass();
+
+        public void printInfo2()
+        {
+            // base.printInfo();
+            Debug.Log("I am the poor Sabi from the next Neighborhood!!");
+        }
+
+        public void printCC()
+        {
+            cc.printInfo();
+        }
     }
 }
