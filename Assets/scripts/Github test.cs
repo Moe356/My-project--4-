@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Moe : MonoBehaviour
 {
+    private int randomWordy;
+
     void Start()
     {
          string funnySentence = "";
@@ -16,7 +18,7 @@ public class Moe : MonoBehaviour
             int randomWord= Random.Range(0,words.Length);
             
             counter++;
-            funnySentence += words[randomWord] + " ";
+            funnySentence += words[randomWordy] + " ";
 
         }
         Debug.Log(funnySentence);
