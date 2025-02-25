@@ -19,7 +19,7 @@ namespace Lecture11_5
     public class ChildClass
     {
         Lecture11.ChildClass cc = new Lecture11.ChildClass();
-
+//without using Lecture11.ChildClass u will  not use the childclass in namespace 11 and u will use the one which is in lecture in namespace 11_5
         public void printInfo2()
         {
             // base.printInfo();
