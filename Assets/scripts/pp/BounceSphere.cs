@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BounceSphere : MonoBehaviour
 {
-    public float bounceHeight = 2f; // Maximum height of the bounce
-    public float bounceSpeed = 2f;  // Speed of the bounce
+    public float bounceHeight = 2f; 
+    public float bounceSpeed = 2f;  
 
     private float startY;
 
