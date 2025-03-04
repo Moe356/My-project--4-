@@ -6,7 +6,7 @@ using UnityEngine;
     {
         void Start()
         {
-            var obj = new CustomObject(1, "Example");
+            var obj = new CustomObject(1, "Mahamad");
             print(obj);
         }
     }
