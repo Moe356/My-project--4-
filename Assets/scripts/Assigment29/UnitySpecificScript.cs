@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+namespace Assignment29
+{
     public class UnitySpecificScript : MonoBehaviour
     {
-        void OnEnable() => print("GameObject Enabled");
-        void OnDisable() => print("GameObject Disabled");
+        public GameObject targetObject; 
+        void OnEnable()
+        {
+            print("GameObject Enabled");
+        }
+
+        void OnDisable()
+        {
+            print("GameObject Disabled");
+        }
+
         void Start()
         {
             print("Game started!");
-            var target = GameObject.Find("TargetObject");
-            print(target ? $"Found object by name: {target.name}" : "No TargetObject found.");
+
+            // Finding objects
+            if (targetObject == null)
+                targetObject = GameObject.Find("TargetObject");
+
+            print(targetObject ? $"Found object by name: {targetObject.name}" : "No TargetObject found.");
+
             var joker = GameObject.FindGameObjectWithTag("Joker");
             print(joker ? $"Found object by tag: {joker.name}" : "No Joker object found.");
+
             var light = GameObject.FindObjectOfType<Light>();
             print(light ? $"Found object of type Light: {light.name}" : "No Light object found.");
         }
@@ -21,12 +36,17 @@ using UnityEngine;
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
-                var target = GameObject.Find("TargetObject");
-                if (target)
+
+                if (targetObject != null)
                 {
-                    target.SetActive(false);
+                    targetObject.SetActive(false);
                     print("TargetObject deactivated!");
+                }
+                else
+                {
+                    print("TargetObject is null!");
                 }
             }
         }
     }
+}
