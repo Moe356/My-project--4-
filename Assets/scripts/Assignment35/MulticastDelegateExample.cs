@@ -5,32 +5,18 @@ namespace Assignment35
     public class MulticastDelegateExample : MonoBehaviour
     {
         delegate void MathOperation(int number);
-        private MathOperation operation;
-
         void Start()
         {
+            MathOperation operation = null;
             operation += DoubleNumber;
             operation += SquareNumber;
             operation += CubeNumber;
+
             operation?.Invoke(5);
         }
-        void DoubleNumber(int number)
-        {
-            int result = number * 2;
-            Debug.Log("Double: " + result);
-        }
 
-        void SquareNumber(int number)
-        {
-            int result = number * number;
-            Debug.Log("Square: " + result);
-        }
-
-        void CubeNumber(int number)
-        {
-            int result = number * number * number;
-            Debug.Log("Cube: " + result);
-        }
-
+        void DoubleNumber(int number) => Debug.Log($"Double: {number * 2}");
+        void SquareNumber(int number) => Debug.Log($"Square: {number * number}");
+        void CubeNumber(int number) => Debug.Log($"Cube: {number * number * number}");
     }
 }
