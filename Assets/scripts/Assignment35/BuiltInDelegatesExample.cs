@@ -7,28 +7,12 @@ namespace Assignment35
     {
         void Start()
         {
-            Action logMessage = SimpleLog;
+            Action logMessage = () => Debug.Log("Hello from Action delegate!");
             logMessage();
-
-            Func<int, int> square = Square;
-            Debug.Log("Square: " + square(5));
-            Predicate<int> isEven = IsEven;
-            Debug.Log("Is 4 even? " + isEven(4));
-        }
-
-        void SimpleLog()
-        {
-            Debug.Log("Hello from Action delegate!");
-        }
-
-        int Square(int x)
-        {
-            return x * x;
-        }
-
-        bool IsEven(int number)
-        {
-            return number % 2 == 0;
+            Func<int, int> square = x => x * x;
+            Debug.Log($"Square: {square(5)}");
+            Predicate<int> isEven = x => x % 2 == 0;
+            Debug.Log($"Is 4 even? {isEven(4)}");
         }
     }
 }
